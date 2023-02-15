@@ -20,6 +20,10 @@ public class Articulo implements Serializable {
     private String publicacion;
     private Integer paginaInicial;
 
+    public Articulo(){
+
+    }
+
     public Long getId() {
         return id;
     }
@@ -91,6 +95,7 @@ public class Articulo implements Serializable {
     public void setNumero(Integer numero) {
         this.numero = numero;
     }
+
 
     private Integer paginaFinal;
     private Integer anio;

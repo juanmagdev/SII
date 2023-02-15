@@ -13,6 +13,22 @@ import javax.persistence.Id;
 
 @Entity
 public class Autor implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String nombre;
+    private String apellidos;
+    @Temporal(TemporalType.DATE)
+    private Date fechaNacimiento;
+    private Integer indiceH;
+    @ElementCollection
+    private Set<String> firmas;
+
+    public Autor(){
+        
+    }
+
     public Long getId() {
         return id;
     }
@@ -50,15 +66,4 @@ public class Autor implements Serializable {
         this.firmas = firmas;
     }
     
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String nombre;
-    private String apellidos;
-    @Temporal(TemporalType.DATE)
-    private Date fechaNacimiento;
-    private Integer indiceH;
-    @ElementCollection
-    private Set<String> firmas;
 }
